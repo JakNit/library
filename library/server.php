@@ -58,4 +58,10 @@
   	header('location: library.php');
     }
     $db -> close();
+
+    if (count($errors) > 0){
+      $printErrors = json_encode($errors);
+      echo "<script type='text/javascript'> alert(".$printErrors.")</script>";
+      echo '<script type="text/javascript"> window.location.href = "library.php"; </script>';
+    }
 ?>
